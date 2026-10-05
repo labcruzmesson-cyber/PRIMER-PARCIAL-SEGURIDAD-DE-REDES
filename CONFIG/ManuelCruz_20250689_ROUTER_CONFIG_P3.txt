@@ -1,0 +1,158 @@
+Building configuration...
+
+Current configuration : 3569 bytes
+!
+! Last configuration change at 15:31:22 UTC Mon Oct 5 2026
+!
+version 15.6
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname R-SUCURSAL
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+ethernet lmi ce
+!
+!
+!
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+redundancy
+!
+!
+!
+!
+!
+!
+!
+crypto isakmp policy 10
+ authentication pre-share
+ group 2
+crypto isakmp key CiscoForti2026! address 192.168.145.20
+crypto isakmp key CiscoForti2026! address 192.168.145.130
+!
+!
+crypto ipsec transform-set TS-DES-SHA esp-des esp-sha-hmac
+ mode tunnel
+!
+!
+!
+crypto map CMAP-HQ 10 ipsec-isakmp
+ set peer 192.168.145.20
+ set peer 192.168.145.130
+ set transform-set TS-DES-SHA
+ match address ACL-VPN-TO-HQ
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ description WAN_HACIA_VMWARE_CLOUD
+ ip address 192.168.145.30 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+ crypto map CMAP-HQ
+!
+interface GigabitEthernet0/1
+ description LAN_SUCURSAL
+ ip address 10.25.89.1 255.255.255.0
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+interface GigabitEthernet0/3
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip route 0.0.0.0 0.0.0.0 192.168.145.2
+!
+ip access-list extended ACL-VPN-TO-HQ
+ permit ip 10.25.89.0 0.0.0.255 172.25.68.0 0.0.0.15
+!
+!
+!
+!
+control-plane
+!
+banner exec ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner incoming ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+banner login ^C
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************^C
+!
+line con 0
+line aux 0
+line vty 0 4
+ login
+ transport input none
+!
+no scheduler allocate
+!
+end
