@@ -122,7 +122,7 @@ Túnel Site-to-Site negociado en IKEv1 / IPsec (DES-SHA1) entre el FortiGate y e
 * Esquema de subredes derivado de la matrícula `2025-0689`.
 * Segmentación con trunk 802.1Q en el switch hacia las subinterfaces del FortiGate.
 * Red de servidores contenida estrictamente en un bloque `/28` (`172.25.68.0/28`).
-* Hostnames homologados y visibles en los prompts de cada equipo (`FGT-HQ`, `SW-1`, `SW-2`, `R-SUCURSAL`, `SRV-WEB`, `SRV-DB`).
+* Hostnames homologados y visibles en los prompts de cada equipo (`FGT-HQ`, `SW-1`, `SW-2`, `R-SUCURSAL`, `WEB`, `DB`).
 
 ## ⚠️ Declaración de Uso de Inteligencia Artificial
 
