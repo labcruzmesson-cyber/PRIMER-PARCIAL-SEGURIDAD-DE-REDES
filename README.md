@@ -1,5 +1,4 @@
 # PRIMER-PARCIAL-SEGURIDAD-DE-REDES
-# Laboratorio de Seguridad Perimetral e Infraestructura de Red: FortiGate & Cisco IOS
 
 [![Video de Demostración en YouTube](https://img.shields.io/badge/YouTube-Demostración%20en%20Video-red?style=for-the-badge&logo=youtube)](https://youtu.be/3wrf4X_yae0)
 
