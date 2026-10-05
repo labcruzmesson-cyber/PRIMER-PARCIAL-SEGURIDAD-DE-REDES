@@ -11,7 +11,7 @@
 
 * **Estudiante:** Manuel Cruz Messón  
 * **Matrícula:** 2025-0689  
-* **Propósito:** Diseñar, implementar y auditar una infraestructura de red corporativa segura multi-sitio. Se integra un firewall perimetral **FortiGate (FortiOS 7.0.x)** administrado al 100% por interfaz gráfica (GUI) como núcleo central y gateway inter-VLAN, conmutadores **Cisco IOSvL2** para segmentación de Capa 2 y hardening de puertos, servidores Linux en zona desmilitarizada (DMZ), y un router **Cisco IOS** en sucursal remota enlazado mediante un túnel **VPN IPsec Site-to-Site** con políticas de acceso y registro de auditoría.
+* **Propósito:** Diseñar, implementar y auditar una infraestructura de red corporativa segura multi-sitio. Se integra un firewall perimetral **FortiGate (FortiOS 7.0.x)** administrado al 100% por interfaz gráfica (GUI) como núcleo central y gateway inter-VLAN, conmutadores **Cisco IOSvL2** para segmentación de Capa 2 y hardening de puertos, servidores Linux, y un router **Cisco IOS** en sucursal remota enlazado mediante un túnel **VPN IPsec Site-to-Site** con políticas de acceso y registro de auditoría.
 
 ---
 
